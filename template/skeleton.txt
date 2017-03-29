@@ -1,0 +1,4 @@
+1. login form
+2. registration form
+3. debugging round database verifier and treasure allocate.
+4. 

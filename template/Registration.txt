@@ -1,0 +1,2 @@
+retrieve data to Teams table and simultaneously insert team id's and corresponding team names into Points table
+set cookie_value = team_id and make sure it gets saved in the Teams table
