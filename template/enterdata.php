@@ -16,7 +16,7 @@ $des = (isset($_POST['comment']))?($_POST['comment']):false;
 $btns = (isset($_POST['btns']))?($_POST['btns']):false;
 $link = (isset($_POST['link']))?($_POST['link']):false;
 $img = (isset($_POST['imglink']))?($_POST['imglink']):false;
-@$win=implode("$", $_POST['winner']);
+@$win=$_POST['comment1'];
 
 
 $stmt=$conn->prepare("INSERT INTO Events(`Year`,`Event_name`,`Description`,`Download_link`,`Images`,`Download_value`,`Winners`) VALUES (:year, :name, :des, :dl, :img, :dv, :win)");
