@@ -66,6 +66,15 @@
 </div>
 <!-- Winners -->
 <div class="form-group">
+  <label class="col-md-4 control-label">Winners</label>
+    <div class="col-md-7 inputGroupContainer">
+    <div class="input-group">
+        <span id="table1" class="input-group-addon" style="cursor:pointer;border:1px solid black;border-radius:5px;"><i class="glyphicon glyphicon-list"></i> &nbsp;&nbsp;Table</span>
+  </div>
+  <textarea rows="25" class="form-control" name="comment1" id="comment1"placeholder="Winners" ></textarea>
+  </div>
+</div>
+<!-- <div class="form-group">
     <label class="col-md-4 control-label" >Winners</label> 
     <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
@@ -81,7 +90,7 @@
       <span class="input-group-addon add" style="border:1px solid black;"><i class="glyphicon glyphicon-plus"></i></span>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Links -->
   
 <div class="form-group">
@@ -195,8 +204,17 @@
 				$('#comment').val(textBefore + "\n<br/><br/>\n<span style='font-style:italic;'>WRITE YOUR TEXT HERE......</span>\n<br/><br/>\n" + textAfter);
     			}
     		);
+    		$('#table1').click(function(){
+				var cursorPos = $('#comment1').prop('selectionStart');
+				var v = $('#comment1').val();
+				var textBefore = v.substring(0,  cursorPos);
+				var textAfter  = v.substring(cursorPos, v.length);
 
-        $('.add').hover(function(){
+				$('#comment1').val(textBefore + "\n<br/><br/>\n<table style='margin-left:3%;color: #999;' class='table table-bordered table-hover' id='results_quizwiz1' >\n <tr>\n<td><b style='color: #737373;'>Team name</b></td>\n<td><b style='color: #737373;'>Members</b></td>\n<td><b style='color: #737373;'>Final Score&emsp;</b></td>\n</tr>\n     <tr>\n<td>WRITE TEAM NAME HERE....</td>\n<td>WRITE NAME OF TEAM MEMBERS HERE......</td>\n<td>WRITE TEAM SCORE HERE........</td>\n</tr>\n<tr>\n<td>WRITE TEAM NAME HERE....</td>\n<td>WRITE NAME OF TEAM MEMBERS HERE......</td>\n<td>WRITE TEAM SCORE HERE........</td>\n</tr>\n<tr>\n<td>WRITE TEAM NAME HERE....</td>\n<td>WRITE NAME OF TEAM MEMBERS HERE......</td>\n<td>WRITE TEAM SCORE HERE........</td>\n</tr>\n</table>\n<br/><br/>\n" + textAfter);
+    			}
+    		);
+
+        /*$('.add').hover(function(){
           $('.add').css("cursor","pointer");
         },function(){
           $('.add').css("cursor","normal");
@@ -205,7 +223,7 @@
         $('.add').click(function(){
           win++;
           $('#addup').before("<div class='form-group'><label class='col-md-4 control-label' ></label> <div class='col-md-4 inputGroupContainer'><div class='input-group'><span class='input-group-addon'>" + win + "</span><input name='winner[]' placeholder='Winner "+ win +"' class='form-control'  type='text'></div></div></div>");
-        });
+        });*/
     	});
     </script>
 
